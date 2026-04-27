@@ -8,7 +8,7 @@
 <!-- Fonts: jsdelivr (works in mainland China + worldwide) with Google Fonts fallback -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" />
 <style>
 :root {
@@ -26,10 +26,12 @@
   --radius: 10px;
   --shadow-sm: 0 1px 2px rgba(20,20,30,.04), 0 1px 3px rgba(20,20,30,.06);
   --shadow-md: 0 4px 18px rgba(20,20,30,.06), 0 1px 3px rgba(20,20,30,.04);
-  --serif: 'Crimson Pro', 'Times New Roman', Georgia, serif;
-  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --serif: 'Crimson Pro', 'Noto Serif SC', 'Times New Roman', Georgia, serif;
+  --sans: 'Inter', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
 }
+html[lang="zh-CN"] body { font-family: 'Inter', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+html[lang="zh-CN"] .name { font-family: 'Noto Serif SC', 'Crimson Pro', serif; letter-spacing: 4px; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -130,6 +132,25 @@ img.avatar { display: block; }
 @media (max-width: 720px) {
   .topnav { font-size: 15px; gap: 0 12px; }
 }
+
+/* Language switcher */
+.lang-switch {
+  display: inline-flex; align-items: center;
+  margin-left: auto; padding-left: 16px;
+  font-family: var(--mono); font-size: 12px;
+  border-left: 1px solid var(--line);
+}
+.lang-switch a {
+  color: var(--ink-muted); padding: 4px 8px;
+  border-radius: 4px; transition: all .15s ease;
+}
+.lang-switch a:hover { color: var(--accent); text-decoration: none; }
+.lang-switch a.active {
+  color: var(--accent); font-weight: 700;
+  background: var(--accent-soft);
+}
+.lang-switch .sep { color: var(--ink-muted); margin: 0 2px; }
+.topnav a.lang-switch-link::before { content: ''; }
 
 .section { padding: 24px 0 60px; }
 .section h2 {
@@ -480,7 +501,7 @@ footer {
 </aside>
 
   <main class="main">
-    <nav class="topnav"><a href="index.html">About</a><a href="education.html">Education</a><a href="news.html">News</a><a href="publications.html">Publications</a><a href="conferences.html">Conferences</a><a href="honors.html" class="active">Honors</a><a href="media.html">Media</a><a href="cv.html">CV</a></nav>
+    <nav class="topnav"><a href="index.html">About</a><a href="education.html">Education</a><a href="news.html">News</a><a href="publications.html">Publications</a><a href="conferences.html">Conferences</a><a href="honors.html" class="active">Honors</a><a href="media.html">Media</a><a href="cv.html">CV</a><span class="lang-switch"><a class="active">EN</a><span class="sep">/</span><a href="zh/cv.html">中</a></span></nav>
     
 <section class="section" id="honors">
   <h2><span class="num">06</span> Honors &amp; Awards</h2>
