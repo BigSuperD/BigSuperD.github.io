@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shengxuan Ding — Conferences</title>
+<title>Shengxuan Ding — Service</title>
 <meta name="description" content="Shengxuan Ding — Safety System Engineer at DiDi Research Labs. Ph.D. in Civil Engineering (Transportation), University of Central Florida." />
 <!-- Fonts: jsdelivr (works in mainland China + worldwide) with Google Fonts fallback -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -504,165 +504,151 @@ footer {
 </aside>
 
   <main class="main">
-    <div class="lang-bar"><span class="lang-switch"><a href="../conferences.html">EN</a><span class="sep">/</span><a class="active">中</a></span></div><nav class="topnav"><a href="index.html">关于</a><a href="education.html">教育</a><a href="news.html">动态</a><a href="publications.html">发表</a><a href="conferences.html" class="active">会议</a><a href="service.html">服务</a><a href="honors.html">荣誉</a><a href="media.html">媒体</a><a href="cv.html">简历</a></nav>
+    <div class="lang-bar"><span class="lang-switch"><a href="../service.html">EN</a><span class="sep">/</span><a class="active">中</a></span></div><nav class="topnav"><a href="index.html">关于</a><a href="education.html">教育</a><a href="news.html">动态</a><a href="publications.html">发表</a><a href="conferences.html">会议</a><a href="service.html" class="active">服务</a><a href="honors.html">荣誉</a><a href="media.html">媒体</a><a href="cv.html">简历</a></nav>
     
-<section class="section" id="conferences">
-  <h2><span class="num">05</span> Conferences</h2>
+<section class="section" id="service">
+  <h2><span class="num">06</span> 学术服务 <span class="num">— 编辑与审稿</span></h2>
 
-  <article class="pub">
-    <div class="pub-thumb"><img src="../pub/aap.jpg" alt="IEEE ITSC 2026" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">IEEE ITSC 2026</span> · 29th International Conference on Intelligent Transportation Systems</div>
-      <h3 class="pub-title">A Cross-Modal Bayesian Framework for Safety-Critical Event Generation</h3>
-      <p class="pub-authors"><strong>Ding, S.</strong>*, et&nbsp;al.</p>
-      <div class="pub-tags"><span class="pub-tag hot">Accepted</span><span class="pub-tag">Corresponding</span><span class="pub-tag">Bayesian</span><span class="pub-tag">Cross-Modal</span></div>
+  <!-- Service description CSS scoped here so we don't bloat global -->
+  <style>
+    .service-block { margin-bottom: 40px; }
+    .service-block h3 {
+      font-family: var(--serif); font-size: 22px; font-weight: 700;
+      color: var(--ink); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .service-block h3 i {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--accent-soft); color: var(--accent);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 14px;
+    }
+    .editor-card {
+      background: linear-gradient(135deg, #fff8e6 0%, #ffffff 100%);
+      border: 1px solid #f0d68a;
+      border-radius: var(--radius);
+      padding: 18px 22px; display: grid;
+      grid-template-columns: 56px 1fr auto; gap: 18px; align-items: center;
+    }
+    .editor-card .icon-wrap {
+      width: 56px; height: 56px; border-radius: 12px;
+      background: linear-gradient(135deg, #ffd86b, #b58a3a);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+    .editor-card .role {
+      font-family: var(--mono); font-size: 11.5px;
+      color: var(--accent-warm); text-transform: uppercase;
+      letter-spacing: 1px; margin-bottom: 4px;
+    }
+    .editor-card .venue-name {
+      font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--ink);
+    }
+    .editor-card .venue-desc { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+    .editor-card a.cta {
+      font-family: var(--mono); font-size: 12px;
+      padding: 8px 14px; border-radius: 6px;
+      background: var(--accent); color: #fff !important;
+      white-space: nowrap;
+    }
+    .editor-card a.cta:hover { background: var(--ink); text-decoration: none; }
+
+    .reviewer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 8px 14px;
+      list-style: none;
+    }
+    .reviewer-grid li {
+      display: grid; grid-template-columns: 26px 1fr auto;
+      align-items: center; gap: 10px;
+      padding: 9px 12px; border-radius: 6px;
+      background: var(--bg-elev); border: 1px solid var(--line);
+      font-size: 13.5px; color: var(--ink);
+      transition: all .15s ease;
+    }
+    .reviewer-grid li:hover {
+      border-color: var(--accent); transform: translateX(2px);
+      box-shadow: var(--shadow-sm);
+    }
+    .reviewer-grid .num {
+      font-family: var(--mono); font-size: 10.5px;
+      color: var(--ink-muted);
+    }
+    .reviewer-grid .if-tag {
+      font-family: var(--mono); font-size: 10.5px;
+      color: var(--accent); background: var(--accent-soft);
+      padding: 2px 7px; border-radius: 999px;
+      white-space: nowrap;
+    }
+    .reviewer-grid .if-tag.high { background: #fde9e9; color: #b04444; }
+    .reviewer-grid .if-tag.mid  { background: var(--accent-soft); color: var(--accent); }
+    .reviewer-grid .if-tag.low  { background: #f1eee4; color: var(--ink-muted); }
+    .reviewer-grid .if-tag.none { background: transparent; color: var(--ink-muted); border: 1px dashed var(--line); }
+  </style>
+
+  <div class="service-block">
+    <h3><i class="fa-solid fa-pen-fancy"></i> Guest Editor</h3>
+    <div class="editor-card">
+      <div class="icon-wrap"><i class="fa-solid fa-pen-nib"></i></div>
+      <div>
+        <div class="role">客座编辑 · 专刊主持</div>
+        <div class="venue-name">Future Transportation</div>
+        <div class="venue-desc">MDPI · 开放获取期刊 · 智能与自主交通专刊</div>
+      </div>
+      <a class="cta" href="http://mdpi.com/si/281005" target="_blank" rel="noopener">
+        征稿启事 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:10px;margin-left:4px;"></i>
+      </a>
     </div>
-  </article>
+  </div>
 
-  <article class="pub">
-    <div class="pub-thumb contain"><img src="../pub/trb.png" alt="TRB" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">104th TRB Annual Meeting</span> · 2025 · TRBAM-25-02341 · Washington, D.C.</div>
-      <h3 class="pub-title">Crash Injury Severity Analysis under Different Levels of Driving Automation</h3>
-      <p class="pub-authors"><strong>Ding, S.</strong>, Abdel-Aty, M., Wang, D., Wang, Z., Zheng, O., Barbour, N.</p>
-      <div class="pub-tags"><span class="pub-tag hot">Doctoral Highlight</span></div>
-    </div>
-  </article>
-
-  <article class="pub">
-    <div class="pub-thumb contain"><img src="../pub/trb.png" alt="TRB" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">104th TRB Annual Meeting</span> · 2025 · TRBAM-25-02850</div>
-      <h3 class="pub-title">Analyzing Injury Severity of School Bus Crashes considering Temporal and Spatial Heterogeneity Using Random Parameters Ordered Probit Model</h3>
-      <p class="pub-authors">Rao, X., Yuan, C., <strong>Ding, S.</strong>*, Fang, X., Yuan, R.</p>
-      <div class="pub-tags"><span class="pub-tag">School Bus</span></div>
-    </div>
-  </article>
-
-  <article class="pub">
-    <div class="pub-thumb contain"><img src="../pub/trb.png" alt="TRB" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">104th TRB Annual Meeting</span> · 2025 · TRBAM-25-02841</div>
-      <h3 class="pub-title">Comparative Analysis of School Bus Crash Severity on Urban versus Rural Roadways: a random parameter logit model with mean heterogeneity</h3>
-      <p class="pub-authors">Rao, X., Yuan, C., <strong>Ding, S.</strong>*, Fang, X., Yuan, R.</p>
-      <div class="pub-tags"><span class="pub-tag">Urban vs Rural</span></div>
-    </div>
-  </article>
-
-  <article class="pub">
-    <div class="pub-thumb contain"><img src="../pub/favs.png" alt="Florida AV Summit" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">Florida Automated Vehicle Summit</span> · 2024</div>
-      <h3 class="pub-title">Automated Vehicle Operation Incident Dataset and Exploratory Analysis</h3>
-      <p class="pub-authors"><strong>Ding, S.</strong>, Abdel-Aty, M., Wang, D., Wang, Z., Zheng, O., Barbour, N.</p>
-      <div class="pub-tags"><span class="pub-tag">Dataset</span></div>
-    </div>
-  </article>
-
-  <article class="pub">
-    <div class="pub-thumb contain"><img src="../pub/trb.png" alt="TRB" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">103rd TRB Annual Meeting</span> · 2024 · TRBAM-24-00804</div>
-      <h3 class="pub-title">Model Calibration for Microscopic Traffic Simulation Using Drone-Based Vehicle Trajectory Data</h3>
-      <p class="pub-authors">Wang, Z., Abdel-Aty, M., Zheng, O., <strong>Ding, S.</strong></p>
-      <div class="pub-tags"><span class="pub-tag">Drone Data</span><span class="pub-tag">Simulation</span></div>
-    </div>
-  </article>
-
-  <article class="pub">
-    <div class="pub-thumb contain"><img src="../pub/trb.png" alt="TRB" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">103rd TRB Annual Meeting</span> · 2024 · TRBAM-24-02897</div>
-      <h3 class="pub-title">Emergency Resource Layout with Multiple Objectives under Complex Disaster Scenarios</h3>
-      <p class="pub-authors">Yuan, C., <strong>Ding, S.</strong>, Wang, Y., Feng, J., Ma, N.</p>
-      <div class="pub-tags"><span class="pub-tag">Emergency</span><span class="pub-tag">Multi-Objective</span></div>
-    </div>
-  </article>
-
-  <article class="pub">
-    <div class="pub-thumb contain"><img src="../pub/trb.png" alt="TRB" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">103rd TRB Annual Meeting</span> · 2024 · TRBAM-24-01497</div>
-      <h3 class="pub-title">TrafficSafetyGPT: Tuning a Pre-trained Large Language Model to a Domain-Specific Expert in Transportation Safety</h3>
-      <p class="pub-authors">Zheng, O., Abdel-Aty, M., Wang, D., Wang, C., <strong>Ding, S.</strong></p>
-      <div class="pub-tags"><span class="pub-tag">LLM</span><span class="pub-tag">Safety</span></div>
-    </div>
-  </article>
-
-  <article class="pub">
-    <div class="pub-thumb contain"><img src="../pub/trb.png" alt="TRB" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">103rd TRB Annual Meeting</span> · 2024 · TRBAM-24-00437</div>
-      <h3 class="pub-title">Investigating the spatial heterogeneity of factors influencing speeding-related crash severities using correlated random parameter order models with heterogeneity-in-means</h3>
-      <p class="pub-authors">Yuan, R., <strong>Ding, S.</strong>, Fang, Z., Xiang, Q.</p>
-      <div class="pub-tags"><span class="pub-tag">Random Parameter</span><span class="pub-tag">Speeding</span></div>
-    </div>
-  </article>
-
-  <article class="pub">
-    <div class="pub-thumb contain"><img src="../pub/trb.png" alt="TRB" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">103rd TRB Annual Meeting</span> · 2024 · TRBAM-24-03775</div>
-      <h3 class="pub-title">How Does Environmental and Road Factors Impact Automated Vehicle (SAE Level 2) Crash Results? A Network and Coupling Analysis</h3>
-      <p class="pub-authors">Cui, Z., Dong, S., Sun, D. J., Ye, L., <strong>Ding, S.</strong></p>
-      <div class="pub-tags"><span class="pub-tag">Network Analysis</span><span class="pub-tag">SAE L2</span></div>
-    </div>
-  </article>
-
-  <article class="pub">
-    <div class="pub-thumb contain"><img src="../pub/eenergy.webp" alt="ACM e-Energy" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">ACM Future Energy Systems (e-Energy)</span> · 2023 · pp. 427-438</div>
-      <h3 class="pub-title">A Data-Driven and Human-Centric EV Charging Recommendation System at City-Scale</h3>
-      <p class="pub-authors">Nie, J., Xia, S., Liu, Y., <strong>Ding, S.</strong>, Hu, L., Zhao, M., Fan, Y., Abdel-Aty, M., Preindl, M., Jiang, X.</p>
-      <div class="pub-tags"><span class="pub-tag">EV Charging</span><span class="pub-tag">City-Scale</span></div>
-    </div>
-  </article>
-
-  <article class="pub">
-    <div class="pub-thumb contain"><img src="../pub/cictp.png" alt="CICTP 2023" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">CICTP 2023</span> · pp. 330-339</div>
-      <h3 class="pub-title">Accessibility Optimization of Public Transportation in Historical Districts — A Study of Beilin District, Xi'an</h3>
-      <p class="pub-authors"><strong>Ding, S.</strong>, Yuan, C., Chen, J., Zhang, C., Feng, J.</p>
-      <div class="pub-tags"><span class="pub-tag">Public Transit</span></div>
-    </div>
-  </article>
-
-  <article class="pub">
-    <div class="pub-thumb contain"><img src="../pub/cictp.png" alt="CICTP 2022" /></div>
-    <div>
-      <div class="pub-meta"><span class="venue">CICTP 2022</span> · pp. 2434-2444</div>
-      <h3 class="pub-title">Analysis of Network Traffic Capacity Based on Travelers Considering Travel Behavior Choice</h3>
-      <p class="pub-authors">Zhang, C., Cheng, L., <strong>Ding, S.</strong>, Zhai, R.</p>
-      <div class="pub-tags"><span class="pub-tag">Network Capacity</span></div>
-    </div>
-  </article>
-
+  <div class="service-block">
+    <h3><i class="fa-solid fa-magnifying-glass"></i> Journal &amp; Conference Reviewer</h3>
+    <p style="font-size:13.5px; color:var(--ink-soft); margin-bottom:16px;">
+      为 30+ 国际权威期刊与会议担任审稿人。下表按影响因子（JCR&nbsp;2024）从高到低排序。
+    </p>
+    <ul class="reviewer-grid">
+      <li><span class="num">01</span><span>Nature Communications</span><span class="if-tag high">IF 14.7</span></li>
+      <li><span class="num">02</span><span>Engineering Applications of Artificial Intelligence</span><span class="if-tag high">IF 7.5</span></li>
+      <li><span class="num">03</span><span>Building and Environment</span><span class="if-tag high">IF 7.4</span></li>
+      <li><span class="num">04</span><span>Transportation Research Part D</span><span class="if-tag high">IF 7.0</span></li>
+      <li><span class="num">05</span><span>Travel Behaviour and Society</span><span class="if-tag mid">IF 6.7</span></li>
+      <li><span class="num">06</span><span>J. King Saud Univ. — Computer &amp; Info. Sci.</span><span class="if-tag mid">IF 6.5</span></li>
+      <li><span class="num">07</span><span>Transportation Research Part A</span><span class="if-tag mid">IF 6.3</span></li>
+      <li><span class="num">08</span><span>Transportation Research Part B</span><span class="if-tag mid">IF 5.8</span></li>
+      <li><span class="num">09</span><span>Scientific Data</span><span class="if-tag mid">IF 5.8</span></li>
+      <li><span class="num">10</span><span>Accident Analysis &amp; Prevention</span><span class="if-tag mid">IF 5.7</span></li>
+      <li><span class="num">11</span><span>Transportmetrica A: Transport Science</span><span class="if-tag mid">IF 4.0</span></li>
+      <li><span class="num">12</span><span>Journal of Transport &amp; Health</span><span class="if-tag mid">IF 3.9</span></li>
+      <li><span class="num">13</span><span>Transportation Research Interdisciplinary Perspectives</span><span class="if-tag mid">IF 3.9</span></li>
+      <li><span class="num">14</span><span>Scientific Reports</span><span class="if-tag mid">IF 3.8</span></li>
+      <li><span class="num">15</span><span>Humanities &amp; Social Sciences Communications</span><span class="if-tag mid">IF 3.7</span></li>
+      <li><span class="num">16</span><span>Royal Society Open Science</span><span class="if-tag low">IF 2.9</span></li>
+      <li><span class="num">17</span><span>Electronics</span><span class="if-tag low">IF 2.6</span></li>
+      <li><span class="num">18</span><span>Applied Sciences</span><span class="if-tag low">IF 2.5</span></li>
+      <li><span class="num">19</span><span>The Journal of Supercomputing</span><span class="if-tag low">IF 2.5</span></li>
+      <li><span class="num">20</span><span>Vehicles</span><span class="if-tag low">IF 2.4</span></li>
+      <li><span class="num">21</span><span>IET Intelligent Transport Systems</span><span class="if-tag low">IF 2.0</span></li>
+      <li><span class="num">22</span><span>J. Transportation Safety &amp; Security</span><span class="if-tag low">IF 2.0</span></li>
+      <li><span class="num">23</span><span>Transportation Research Record (TRR)</span><span class="if-tag low">IF 1.7</span></li>
+      <li><span class="num">24</span><span>Data Science for Transportation</span><span class="if-tag none">—</span></li>
+      <li><span class="num">25</span><span>Discover Civil Engineering</span><span class="if-tag none">—</span></li>
+      <li><span class="num">26</span><span>Autonomous Transportation Research</span><span class="if-tag none">—</span></li>
+      <li><span class="num">27</span><span>Human-Centric Intelligent Systems</span><span class="if-tag none">—</span></li>
+      <li><span class="num">28</span><span>Int'l J. Vehicle Information &amp; Comm. Systems</span><span class="if-tag none">—</span></li>
+      <li><span class="num">29</span><span>TRB Annual Meeting (TRBAM 2026)</span><span class="if-tag none">会议</span></li>
+      <li><span class="num">30</span><span>IEEE ITSC 2026</span><span class="if-tag none">会议</span></li>
+    </ul>
+  </div>
 </section>
 
-    <div class="page-nav"><a href="publications.html"><div><span class="label">← 上一页</span><span class="target">发表</span></div></a><a href="service.html" style="text-align:right"><div><span class="label">下一页 →</span><span class="target">服务</span></div></a></div>
+    <div class="page-nav"><a href="conferences.html"><div><span class="label">← 上一页</span><span class="target">会议</span></div></a><a href="honors.html" style="text-align:right"><div><span class="label">下一页 →</span><span class="target">荣誉</span></div></a></div>
     <footer>
       <span>© 2026 丁圣轩 · 用心打造。</span>
       <span>最后更新 · 2026 年 4 月</span>
     </footer>
   </main>
 </div>
-
-<script>
-  const tabs = document.querySelectorAll('.pub-tab');
-  const pubs = document.querySelectorAll('.pub');
-  const groups = document.querySelectorAll('.pub-group');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const filter = tab.dataset.filter;
-      pubs.forEach(p => p.classList.toggle('hidden', !(filter === 'all' || p.dataset.cat === filter)));
-      groups.forEach(g => g.classList.toggle('hidden', !(filter === 'all' || g.dataset.group === filter)));
-    });
-  });
-</script>
 
 </body>
 </html>
